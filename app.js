@@ -1,9 +1,11 @@
 import express from 'express';
-import './src/db/connect.js';
+// import './src/db/connect.js';
+import router from './src/router.js';
 
 const app = express();
 
 app.use(express.json());
+app.use(router);
 
 // Homepage route
 app.get('/', (req, res) => {
