@@ -14,7 +14,28 @@ const options = {
         url: '/',
         description: 'Current server'
       }
-    ]
+    ],
+    components: {
+      schemas: {
+        Book: {
+          type: 'object',
+          required: ['id', 'authorId', 'title', 'publicationDate'],
+          properties: {
+            id: { type: 'string', example: 'b1' },
+            authorId: { type: 'string', example: 'a1' },
+            title: { type: 'string', example: 'Pride and Prejudice' },
+            publicationDate: { type: 'string', format: 'date', example: '1813-01-28' }
+          }
+        },
+        Error: {
+          type: 'object',
+          required: ['message'],
+          properties: {
+            message: { type: 'string', example: 'Book not found' }
+          }
+        }
+      }
+    }
   },
   apis: ['./src/router.js', './app.js']
 };
